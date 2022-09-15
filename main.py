@@ -144,7 +144,7 @@ def modificarResultado(id_resultado, id_mesa, id_candidato):
     json = miControladorResultado.update(id_resultado, data, id_mesa, id_candidato)
     return jsonify(json)
 
-#Eliminar un resultado
+#Elimanr un resultado
 @app.route("/resultados/<string:id>", methods=['DELETE'])
 def eliminarResultado(id):
     json = miControladorResultado.delete(id)
@@ -167,5 +167,6 @@ def inscritoEnMesas(id_candidato):
 def getMaxDocument():
     json = miControladorResultado.getMayorCedula()
     return jsonify(json)
+
 if __name__ =="__main__":
     app.run(debug=True, port=9000)
